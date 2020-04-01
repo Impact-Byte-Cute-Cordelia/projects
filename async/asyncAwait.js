@@ -43,28 +43,28 @@
 // test();
 
 // async deklarasi
-// const orderSchedule = async () => {
-//   try{
-//     const dateSchedule = await new Date()
-//     // const message = await orderSomething(dateSchedule)
-//     console.log(dateSchedule);
-//     return dateSchedule;
-//   } catch (error){
-//     return error
-//   }
-// }
+const orderSchedule = async () => {
+  try {
+    const dateSchedule = await new Date();
+    // const message = await orderSomething(dateSchedule)
+    console.log(dateSchedule);
+    return dateSchedule;
+  } catch (error) {
+    return error;
+  }
+};
 
 // orderSchedule()
 // .then(message => console.log(message))
 // .catch(error => console.log(error))
 
-// const run = async () => {
-//   try {
-//     const message = await orderSchedule()
-//     console.log(message);
-//   } catch(error){
-//     console.log(error);
-//   }
-// }
+const run = async () => {
+  try {
+    const message = await orderSchedule();
+    console.log(message);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// run()
+run();
