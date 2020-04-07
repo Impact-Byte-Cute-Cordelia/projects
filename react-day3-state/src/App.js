@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Counter from './components/Counter'
+import Todo from './components/Todo'
+import Login from './components/Login'
 
 class ChildComponent extends React.Component {
   constructor(props) {
@@ -71,12 +73,17 @@ function App() {
   console.log("PERSON", person)
 
   return (
-    <div className="App">
+    <div>
       <Counter />
       <ChildComponent hobbies={person.hobbies} />
 
       <h3>Yeaay hallo {person.name}</h3>
       <button onClick={hancleChangeName}>Change Name</button>
+
+      <br/>
+      <br/>
+      <Todo />
+      <Login />
     </div>
   );
 }
