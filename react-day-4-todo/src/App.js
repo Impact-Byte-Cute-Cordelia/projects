@@ -24,6 +24,17 @@ const App = () => {
     setTodos(newTodos);
   };
 
+  // handle edit todo
+  const editTodo = (index) => {
+    console.log("edit click");
+    const newTodos = [...todos];
+    const editTodos = newTodos[index].text;
+    console.log(editTodos);
+    const editedTodo = prompt(editTodos);
+    newTodos.splice(index, 1, { text: editedTodo });
+    setTodos(newTodos);
+  };
+
   // handle submit form
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +56,13 @@ const App = () => {
       </form>
 
       {todos.map((todo, index) => (
-        <Todo key={index} index={index} todo={todo} removeTodo={removeTodo} />
+        <Todo
+          key={index}
+          index={index}
+          todo={todo}
+          removeTodo={removeTodo}
+          editTodo={editTodo}
+        />
       ))}
     </div>
   );
