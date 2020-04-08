@@ -16,6 +16,14 @@ const App = () => {
     setValue(event.target.value);
   };
 
+  // handle remove button
+  const removeTodo = (index) => {
+    console.log("Sudah ke click");
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
   // handle submit form
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +34,7 @@ const App = () => {
     setTodos(newTodos);
     setValue("");
   };
+
   return (
     <div>
       <h1>React Todo function</h1>
@@ -36,7 +45,7 @@ const App = () => {
       </form>
 
       {todos.map((todo, index) => (
-        <Todo key={index} index={index} todo={todo} />
+        <Todo key={index} index={index} todo={todo} removeTodo={removeTodo} />
       ))}
     </div>
   );
