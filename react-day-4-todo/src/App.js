@@ -3,9 +3,9 @@ import Todo from "./components/Todo";
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { text: "Learn react" },
-    { text: "Learn at impactbyte" },
-    { text: "love programming" },
+    { text: "Learn react", isComplete: true },
+    { text: "Learn at impactbyte", isComplete: false },
+    { text: "love programming", isComplete: false },
   ]);
 
   const [value, setValue] = useState("");
@@ -30,7 +30,9 @@ const App = () => {
     const newTodos = [...todos];
     const editTodos = newTodos[index].text;
     console.log(editTodos);
+
     const editedTodo = prompt(editTodos);
+    console.log("editedTodo", editedTodo);
     newTodos.splice(index, 1, { text: editedTodo });
     setTodos(newTodos);
   };
@@ -44,6 +46,14 @@ const App = () => {
     console.log("newTodos", newTodos);
     setTodos(newTodos);
     setValue("");
+  };
+
+  // complete todo
+  const completeTodo = (index) => {
+    console.log("complete click");
+    const newTodos = [...todos];
+    newTodos[index].isComplete = !todos[index].isComplete;
+    setTodos(newTodos);
   };
 
   return (
@@ -62,6 +72,7 @@ const App = () => {
           todo={todo}
           removeTodo={removeTodo}
           editTodo={editTodo}
+          completeTodo={completeTodo}
         />
       ))}
     </div>
