@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Todo from "./components/Todo";
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    { text: "Learn react", isComplete: true },
-    { text: "Learn at impactbyte", isComplete: false },
-    { text: "love programming", isComplete: false },
-  ]);
+  const [todos, setTodos] = useState([{ text: "", isComplete: true }]);
+
+  // { text: "Learn react", isComplete: true },
+  //   { text: "Learn at impactbyte", isComplete: false },
+  //   { text: "love programming", isComplete: false },
 
   const [value, setValue] = useState("");
   console.log("value", value);

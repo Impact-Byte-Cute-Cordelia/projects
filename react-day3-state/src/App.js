@@ -1,90 +1,40 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { Component } from "react";
+import ChildComponents from "./components/ChildComponents";
+import TodoClass from "./components/TodoClass";
 
-import Counter from './components/Counter'
-import Todo from './components/Todo'
-import Login from './components/Login'
-
-class ChildComponent extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      name: "Alpha",
-      age: 20,
-      address: "Jl. sana sini",
-      hobbies: this.props.hobbies
+      name: "Wahid",
+      counter: 0,
     };
   }
+  // function handle plus
+  // handlePlus = () => {
+  //   this.setState({ counter: this.state.counter + 1 });
+  // };
 
-  handleClick = () => {
-    console.log("hallo")
-    this.setState({
-      name: "delta",
-      hobbies: ["baca buku", "ngoding", "diskusi"]
-    })
-  }
+  // handleMinus = () => {
+  //   this.setState({ counter: this.state.counter - 1 });
+  // };
 
   render() {
-    // console.log(this.state)
+    // console.log("state", this.state.counter);
     return (
       <div>
-        <h1>Hallo {this.state.name}</h1>
+        {/* <h1>Tes</h1>
+        {this.state.name}
 
-        <ul>
-          {this.state.hobbies.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        {this.state.counter}
+        <button onClick={this.handlePlus}>plus</button>
+        <button onClick={this.handleMinus}>minus</button>
 
-          {this.state.hobbies[0]}
-        <button onClick={this.handleClick}>Click me</button>
+        <ChildComponents biodata={this.state.name} /> */}
+
+        <TodoClass />
       </div>
     );
   }
 }
-
-function App() {
-  // const [name, setName] = useState("Beta");
-  // const [age, setName] = useState("Beta")
-  // const [address, setName] = useState("Beta")
-  // const [hobby, setName] = useState("Beta")
-
-  const [person, setPerson] = useState({
-    name: "Beta",
-    age: 17,
-    address: "jalna jalan",
-    hobbies: ["jalan-jalan", "tidur", "ngegame"],
-  });
-
-  const hancleChangeName = () => {
-    let newHobby = [...person.hobbies]
-    newHobby[0] = "ngopi"
-
-    console.log(newHobby)
-
-    setPerson({  
-      ...person,
-      name: "Echo",
-      hobbies: newHobby
-    })
-  }
-
-  console.log("PERSON", person)
-
-  return (
-    <div>
-      <Counter />
-      <ChildComponent hobbies={person.hobbies} />
-
-      <h3>Yeaay hallo {person.name}</h3>
-      <button onClick={hancleChangeName}>Change Name</button>
-
-      <br/>
-      <br/>
-      <Todo />
-      <Login />
-    </div>
-  );
-}
-
-export default App;
