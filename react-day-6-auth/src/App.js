@@ -5,14 +5,15 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-// PAGES
-import Home from "./pages/Home";
-import Todo from "./pages/Todo";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
 // COMPONENTS
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+// PAGES
+import Home from "./pages/Home";
+import Todo from "./pages/Todo";
+import UserGithub from "./pages/UserGithub";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   const isLogin = JSON.parse(localStorage.getItem("statusLogin"));
@@ -34,6 +35,9 @@ const App = () => {
         </Route>
         <Route path="/signup">
           <SignUp />
+        </Route>
+        <Route path="/user/:id">
+          <UserGithub />
         </Route>
       </Switch>
 

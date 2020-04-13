@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 // import { Modal, Button } from "antd";
-import { Modal, Button } from "react-bootstrap";
+// import { Modal, Button } from "react-bootstrap";
 
 function Home() {
   const [modal, setModal] = useState(false);
@@ -11,7 +11,7 @@ function Home() {
   return (
     <div>
       <h1>Ini halaman Home</h1>
-      <Button onClick={handleModalLogin}>Ini modal login</Button>
+      {/* <Button onClick={handleModalLogin}>Ini modal login</Button>
 
       <Modal.Dialog>
         <Modal.Header closeButton>
@@ -26,7 +26,7 @@ function Home() {
           <Button variant="secondary">Close</Button>
           <Button variant="primary">Save changes</Button>
         </Modal.Footer>
-      </Modal.Dialog>
+      </Modal.Dialog> */}
       {/* <Modal
         title="Basic Modal"
         visible={modal}
@@ -38,12 +38,12 @@ function Home() {
         <p>Some contents...</p>
       </Modal> */}
 
-      {/* <Button color="danger" onClick={handleModalLogin}>
+      <Button color="danger" onClick={handleModalLogin}>
         Ini Modal Login
-      </Button> */}
+      </Button>
 
       {/* Ini modalnya */}
-      {/* <Modal isOpen={modal} toggle={handleModalLogin}>
+      <Modal isOpen={modal} toggle={handleModalLogin}>
         <ModalHeader>Ini modal untuk login</ModalHeader>
         <ModalBody>
           <input type="text" placeholder="buat login" />{" "}
@@ -53,7 +53,7 @@ function Home() {
             Signin
           </Button>
         </ModalFooter>
-      </Modal> */}
+      </Modal>
     </div>
   );
 }
