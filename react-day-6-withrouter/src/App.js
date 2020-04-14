@@ -1,0 +1,73 @@
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./App.css";
+
+// Import component
+import Navbar from "./component/Navbar";
+import Login from "./component/Login";
+import Register from "./component/Register";
+import TesModal from "./component/TesModal"
+import Digimon from './component/Digimon'
+import DigimonDesc from "./component/DigimonDesc"
+import Users from './Users'
+import DetailUser from "./DetailUser";
+
+// Component with arrow function
+const About = () => (
+  <h1>About</h1>
+)
+
+// Component woth props
+function Home(props) {
+return <h1>Welcome {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Navbar />
+      {/* <TesModal /> */}
+
+      <Switch>
+        <Route exact path="/">
+          {/* Sending props name */}
+          <Home name="Broo" />
+        </Route>
+
+        <Route exact path="/digimon">
+          <Digimon />
+        </Route>
+
+        <Route path="/digimon/:name">
+          <DigimonDesc />
+        </Route>
+
+        <Route path="/about">
+          <About />
+        </Route>
+
+        <Route exact path="/users">
+          <Users />
+        </Route>
+
+        {/* Detail page /users with params id */}
+        <Route path="/users/:id">
+          <DetailUser />
+        </Route>
+
+        <Route path="/login">
+          {/* component class*/}
+          <Login />
+        </Route>
+
+        <Route path="/register">
+          {/* component function*/}
+          <Register />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default App;
