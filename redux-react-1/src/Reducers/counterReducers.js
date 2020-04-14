@@ -17,6 +17,15 @@ const counter = (state = initialState, action) => {
     default:
       return state;
   }
+
+  // if (action.type === INCREMENT) {
+  //   return {
+  //     ...state,
+  //     cart: state.cart + 1,
+  //   };
+  // } else {
+  //   return state;
+  // }
 };
 
 export default counter;
