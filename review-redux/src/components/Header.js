@@ -1,21 +1,48 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter, Link } from "react-router-dom";
 
 function Header(props) {
-  console.log("props header", props);
+  console.log("props  header", props);
   return (
     <div>
-      <h1>React Redux Review</h1>
-      <h1>Total Cakes {props.cakes}</h1>
-      <h1>Total Cakes {props.iceCream}</h1>
+      <h1>Review Redux</h1>
+      <h3>total Cakes: {props.cakes}</h3>
+      <div>
+        {/* <button
+          onClick={() => {
+            props.history.push("/");
+          }}
+        >
+          go to home
+        </button> */}
+        <Link to="/">Home</Link>
+        <button
+          onClick={() => {
+            props.history.push("/icecream");
+          }}
+        >
+          go to ice cream
+        </button>
+        <button
+          onClick={() => {
+            props.history.push("/cakes");
+          }}
+        >
+          go to cakes
+        </button>
+      </div>
     </div>
   );
 }
-const mapStateToProps = ({ cakes, iceCream }) => {
+
+// mapStateToProps untuk ngambil state aja
+const mapStateToProps = (props) => {
   return {
-    cakes: cakes.cakes,
-    iceCream: iceCream.iceCream,
+    cakes: props.cakes.cakes,
   };
 };
 
-export default connect(mapStateToProps, null)(Header);
+// mapDispatchToProps untuk merubah state
+
+export default connect(mapStateToProps, null)(withRouter(Header));

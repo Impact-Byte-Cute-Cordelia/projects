@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-// pages
-import Cakes from "./Pages/Cakes";
-import IceCream from "./Pages/IceCream";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
-import Header from "./components/Header";
+import Header from "./Components/Header";
+
+// Pages
+import Home from "./Pages/Home";
+import IceCream from "./Pages/IceCream";
+import Cakes from "./Pages/Cakes";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/cakes">
             <Cakes />
           </Route>
           <Route path="/icecream">

@@ -1,14 +1,14 @@
-export const INCREMENT_CAKE = "INCREMENT_CAKE";
-export const DECREMENT_CAKE = "DECREMENT_CAKE";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
 
 export const addCakes = () => {
   return {
-    type: INCREMENT_CAKE,
+    type: INCREMENT,
   };
 };
 
 export const minusCakes = () => {
   return {
-    type: DECREMENT_CAKE,
+    type: DECREMENT,
   };
 };

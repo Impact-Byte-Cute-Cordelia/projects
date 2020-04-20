@@ -1,39 +1,35 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addCakes, minusCakes } from "../Actions/CakesActions";
 
-function Cakes(props) {
-  console.log("props cakes", props);
+const Cakes = ({ cakes, addCakes, minusCakes }) => {
+  // console.log("props cakes", props);
   return (
     <div>
-      <h1>Pages Cakes</h1>
-      <h3>I have {props.cakes} CAKES</h3>
+      <h1>Cakes</h1>
+
       <button
         onClick={() => {
-          props.addCakes();
+          addCakes();
         }}
       >
-        Buy More Cakes
+        I buy more cakes
       </button>
+      <h3>I have {cakes} cakes</h3>
       <button
         onClick={() => {
-          props.minusCakes();
+          minusCakes();
         }}
       >
-        Oops i eat my cakes
-      </button>
-      <button onClick={() => props.history.push("/icecream")}>
-        Go to pages icecream
+        Oops i eat cakes
       </button>
     </div>
   );
-}
+};
 
-const mapStateToProps = (props) => {
+const mapStateToProps = ({ cakes }) => {
   return {
-    cakes: props.cakes.cakes,
-    iceCream: props.iceCream.iceCream,
+    cakes: cakes,
   };
 };
 
@@ -44,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Cakes));
+export default connect(mapStateToProps, mapDispatchToProps)(Cakes);

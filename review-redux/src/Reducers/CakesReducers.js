@@ -1,17 +1,18 @@
-import { INCREMENT_CAKE, DECREMENT_CAKE } from "../Actions/CakesActions";
+import { INCREMENT, DECREMENT } from "../Actions/CakesActions";
 
-const initialState = {
+const initState = {
   cakes: 0,
 };
 
-const cakes = (state = initialState, action) => {
+const cakes = (state = initState, action) => {
   switch (action.type) {
-    case INCREMENT_CAKE:
+    case INCREMENT:
       return {
         ...state,
         cakes: state.cakes + 1,
       };
-    case DECREMENT_CAKE:
+
+    case DECREMENT:
       return {
         ...state,
         cakes: state.cakes - 1,
