@@ -36,13 +36,13 @@ export function getDataDigimon() {
   }
 }
 
-export function postDataDigimon(postObject) {
+export function postDataDigimon(postObjectDigimon) {
   return function(dispatch) {
     dispatch(getDataBegin())
 
     // axios.get("https://digimon-api.herokuapp.com/api/digimon")
-    axios.post("https://5e8e9d60e0e7de001685f875.mockapi.io/digimon", postObject)
-    .then(result => dispatch(getDataSuccess(result.data)))
+    axios.post("https://5e8e9d60e0e7de001685f875.mockapi.io/digimon", postObjectDigimon)
+    .then(() => dispatch(getDataDigimon()))
     .catch(error => dispatch(getDataFailed(error.massage)))
   }
 }

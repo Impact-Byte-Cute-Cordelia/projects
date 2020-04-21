@@ -5,12 +5,12 @@ import { getDataDigimon, postDataDigimon } from "../redux/Actions/getDigimon";
 
 // Component Function
 function Digimon(props) {
-  // const [data, setData] = useState([])
   const [digimonName, setDigimonName] = useState("")
+  const getData = props.getDataDigimon;
 
   useEffect(() => {
-    props.getDataDigimon()
-  }, [])
+    getData()
+  }, [getData])
 
   const handleChange = (event) => {
     setDigimonName(event.target.value)
@@ -28,7 +28,7 @@ function Digimon(props) {
     console.log(newDigimon)
   }
 
-  console.log(props)
+  console.log("PROPS", props)
 
   return (
     <div>
@@ -67,7 +67,7 @@ const mapStateToProps = (props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getDataDigimon: () => dispatch(getDataDigimon()),
-    postDataDigimon: (obj) => dispatch(postDataDigimon(obj))
+    postDataDigimon: (postObjectDigimon) => dispatch(postDataDigimon(postObjectDigimon))
   };
 };
 
