@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 function Header(props) {
   console.log("props  header", props);
@@ -9,14 +9,13 @@ function Header(props) {
       <h1>Review Redux</h1>
       <h3>total Cakes: {props.cakes}</h3>
       <div>
-        {/* <button
+        <button
           onClick={() => {
             props.history.push("/");
           }}
         >
           go to home
-        </button> */}
-        <Link to="/">Home</Link>
+        </button>
         <button
           onClick={() => {
             props.history.push("/icecream");
