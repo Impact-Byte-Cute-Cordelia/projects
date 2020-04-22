@@ -13,7 +13,10 @@ const counter = (state = initialState, action) => {
       };
     case DECREMENT:
       console.log("DECREMENT");
-      break;
+      return {
+        ...state,
+        cart: state.cart - 1,
+      };
     default:
       return state;
   }

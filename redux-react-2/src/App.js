@@ -1,10 +1,11 @@
 import React from "react";
-import Product from "./pages/Product";
+// import ProductHooks from "./pages/ProductHooks";
 
 function App() {
   return (
     <div>
-      <Product />
+      {/* <Product /> */}
+      {/* <ProductHooks /> */}
     </div>
   );
 }
