@@ -1,11 +1,12 @@
 import React from "react";
-// import ProductHooks from "./pages/ProductHooks";
+import Digimon from "./pages/Digimon";
 
 function App() {
   return (
     <div>
       {/* <Product /> */}
       {/* <ProductHooks /> */}
+      <Digimon />
     </div>
   );
 }

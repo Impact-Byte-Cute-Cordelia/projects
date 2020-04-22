@@ -1,54 +1,70 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import { getDataDigimon, postDataDigimon } from "../redux/Actions/getDigimon";
+import {
+  getDataDigimon,
+  postDataDigimon,
+  deleteDataDigimon,
+} from "../redux/Actions/getDigimon";
 
 // Component Function
 function Digimon(props) {
-  const [digimonName, setDigimonName] = useState("")
+  const [digimonName, setDigimonName] = useState("");
   const getData = props.getDataDigimon;
 
   useEffect(() => {
-    getData()
-  }, [getData])
+    getData();
+  }, [getData]);
 
   const handleChange = (event) => {
-    setDigimonName(event.target.value)
-  }
+    setDigimonName(event.target.value);
+  };
 
   const handleAdd = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     let newDigimon = {
       id: "10",
-      name: digimonName
-    }
-    props.postDataDigimon(newDigimon)
+      name: digimonName,
+    };
+    props.postDataDigimon(newDigimon);
 
-    console.log(newDigimon)
-  }
+    console.log(newDigimon);
+  };
 
-  console.log("PROPS", props)
+  const handleDelete = (id) => {
+    props.deleteDataDigimon(id);
+  };
+
+  console.log("PROPS", props);
 
   return (
     <div>
       <h1>Digimon</h1>
-      <form onSubmit={handleAdd}
-        >
-          <label>
-            Digimon Name:
-            <input
-              type="text"
-              name="digimonName"
-              value={digimonName}
-              onChange={handleChange}
-            />
-          </label>
-          <input type="submit" value="Add" />
-        </form>
+      <form onSubmit={handleAdd}>
+        <label>
+          Digimon Name:
+          <input
+            type="text"
+            name="digimonName"
+            value={digimonName}
+            onChange={handleChange}
+          />
+        </label>
+        <input type="submit" value="Add" />
+      </form>
 
       {props.digimons.map((item, index) => (
-        <li key={index}>{item.name}</li>
+        <div key={index}>
+          <li>{item.name}</li>
+          <button
+            onClick={() => {
+              handleDelete(item.id);
+            }}
+          >
+            delete
+          </button>
+        </div>
       ))}
     </div>
   );
@@ -56,9 +72,9 @@ function Digimon(props) {
 
 // UNTUK MENGAMBIL STATE DARI STORE
 const mapStateToProps = (props) => {
-  console.log("state to props", props)
+  console.log("state to props", props);
   return {
-    digimons: props.getDigimon.data
+    digimons: props.getDigimon.data,
   };
 };
 
@@ -67,7 +83,9 @@ const mapStateToProps = (props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getDataDigimon: () => dispatch(getDataDigimon()),
-    postDataDigimon: (postObjectDigimon) => dispatch(postDataDigimon(postObjectDigimon))
+    postDataDigimon: (postObjectDigimon) =>
+      dispatch(postDataDigimon(postObjectDigimon)),
+    deleteDataDigimon: (id) => dispatch(deleteDataDigimon(id)),
   };
 };
 
