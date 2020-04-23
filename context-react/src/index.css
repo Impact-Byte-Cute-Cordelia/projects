@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+  margin: 0px;
+}
+
+nav {
+  padding: 5px;
+}
+
+nav ul {
+  padding: 0px;
+}
+
+nav li {
+  list-style-type: none;
+}
+.contact-list {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-list ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.contact-list li {
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
