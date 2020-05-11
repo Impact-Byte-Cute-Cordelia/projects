@@ -45,29 +45,18 @@ export default function ReviewAxios() {
 
   const handleChangeEdit = (e) => {
     const newValue = e.target.value;
-    const name = userEdit.name;
-    setUserEdit({
-      name: newValue,
-    });
+    const old = { ...userEdit };
+    old.name = newValue;
+    setUserEdit(old);
     console.log("userEdit", userEdit);
   };
 
   const handleSubmit = (id) => {
-    // const newId = parseInt(id);
-    // console.log("masuk", id);
-    // await axios.put(
-    //   `https://5e8437e5a8fdea00164ac426.mockapi.io/user/${id}`,
-    //   userEdit
-    // );
     console.log("userEdit", userEdit);
-    const ids = 1;
-
     axios
-      .put(`https://5e8437e5a8fdea00164ac426.mockapi.io/user/${ids}`, {
-        userEdit,
-      })
+      .put(`https://5e8437e5a8fdea00164ac426.mockapi.io/user/${id}`, userEdit)
       .then((response) => {
-        // setUserEdit(response.data);
+        setUserEdit(response.data);
       })
       .catch((error) => {
         console.log(error);
