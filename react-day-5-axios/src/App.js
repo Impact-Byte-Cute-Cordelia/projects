@@ -1,16 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
-import TodoList from "./components/TodoList";
-import DigimonList from "./components/DigimonList";
-import UnsplashList from "./components/UnsplashList";
+// import TodoList from "./components/TodoList";
+// import DigimonList from "./components/DigimonList";
+import ReviewAxios from "./components/ReviewAxios";
 
 function App() {
   return (
     <div>
       {/* <TodoList /> */}
-      <DigimonList />
+      {/* <DigimonList /> */}
+      <ReviewAxios />
       {/* <UnsplashList /> */}
     </div>
   );
