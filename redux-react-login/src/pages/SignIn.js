@@ -6,6 +6,7 @@ import { signin } from "../redux/Actions/user.actions";
 function SignIn() {
   const history = useHistory();
   const dispatch = useDispatch();
+  // check state redux isLogged
   const isLogged = useSelector((state) => state.user);
   console.log("isLogged", isLogged);
 

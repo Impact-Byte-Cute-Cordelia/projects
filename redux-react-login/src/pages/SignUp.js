@@ -8,6 +8,8 @@ import { signup } from "../redux/Actions/user.actions";
 function SignUp() {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  // check state redux isLogged
   const isLogged = useSelector((state) => state.user);
   console.log("isLogged", isLogged);
 

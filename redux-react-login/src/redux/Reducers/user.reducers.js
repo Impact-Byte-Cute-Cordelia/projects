@@ -1,5 +1,6 @@
 import { SIGN_UP, SIGN_IN } from "../Actions/user.actions";
 
+// check token
 const token = localStorage.getItem("token");
 
 const initialState = token
@@ -13,6 +14,7 @@ const initialState = token
       signupData: [],
     };
 
+// reducers users
 const user = (state = initialState, action) => {
   console.log("test");
   switch (action.type) {

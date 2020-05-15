@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 function Home() {
   const history = useHistory();
+  // check state redux isLogged
   const isLogged = useSelector((state) => state.user);
   console.log("isLogged", isLogged);
   return (
