@@ -10,6 +10,19 @@ function Home() {
   console.log("tes env", process.env.REACT_APP_SECRET_NAME);
   console.log("tes env2", process.env.REACT_APP_THORIQ);
   console.log("tes env3", process.env.REACT_APP_DOMAIN);
+  console.log("tes env", process.env.REACT_APP_SECRET_NAME);
+  console.log("tes env2", process.env.REACT_APP_THORIQ);
+  console.log("tes env3", process.env.REACT_APP_DOMAIN);
+  console.log("tes env", process.env.REACT_APP_SECRET_NAME);
+  console.log("tes env2", process.env.REACT_APP_THORIQ);
+  console.log("tes env3", process.env.REACT_APP_DOMAIN);
+  console.log("tes env", process.env.REACT_APP_SECRET_NAME);
+  console.log("tes env2", process.env.REACT_APP_THORIQ);
+  console.log("tes env3", process.env.REACT_APP_DOMAIN);
+
+  console.log("tes env", process.env.REACT_APP_SECRET_NAME);
+  console.log("tes env2", process.env.REACT_APP_THORIQ);
+  console.log("tes env3", process.env.REACT_APP_DOMAIN);
   return (
     <div>
       <h1>Home</h1>
